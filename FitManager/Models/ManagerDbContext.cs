@@ -11,10 +11,11 @@ namespace FitManager.Models
 {
     public class ManagerDbContext : IdentityDbContext<User, IdentityRole<int>, int>
     {
-        //public DbSet<Product> Products { get; set; }
+        public DbSet<Member> Member { get; set; }
 
         public ManagerDbContext(DbContextOptions options) : base(options)
         {
+
         }
     }
 }
