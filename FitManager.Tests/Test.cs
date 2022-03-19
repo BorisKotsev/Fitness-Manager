@@ -93,25 +93,25 @@ namespace FitManager.Tests
 
             memberService.Create(member);
 
-            Member dbProduct = memberService.GetById(1);
+            Member dbMember = memberService.GetById(1);
 
-            Assert.AreEqual(dbProduct.FirstName, "Name");
+            Assert.AreEqual(dbMember.FirstName, "Name");
 
             Staff staff = CreateStaff(1, "NAME");
 
             staffService.Create(staff);
 
-            Staff dbProduct1 = staffService.GetById(1);
+            Staff dbStaff = staffService.GetById(1);
 
-            Assert.AreEqual(dbProduct1.FirstName, "NAME");
+            Assert.AreEqual(dbStaff.FirstName, "NAME");
 
             Supplement supplement = CreateSupplement(1, "Kreatin");
 
             supplementService.Create(supplement);
 
-            Supplement dbProduct2 = supplementService.GetById(1);
+            Supplement dbSupplement = supplementService.GetById(1);
 
-            Assert.AreEqual(dbProduct2.Type, "Kreatin");
+            Assert.AreEqual(dbSupplement.Type, "Kreatin");
         }
 
         [Test]
@@ -121,68 +121,94 @@ namespace FitManager.Tests
 
             memberService.Create(member);
 
-            Member dbProduct = context.Member.FirstOrDefault();
+            Member dbMember = context.Member.FirstOrDefault();
 
-            Assert.NotNull(dbProduct);
+            Assert.NotNull(dbMember);
 
             Staff staff = CreateStaff(1, "NAME");
 
             staffService.Create(staff);
 
-            Staff dbProduct1 = context.Staff.FirstOrDefault();
+            Staff dbStaff = context.Staff.FirstOrDefault();
 
-            Assert.NotNull(dbProduct1);
+            Assert.NotNull(dbStaff);
 
             Supplement supplement = CreateSupplement(1, "Kreatin");
 
             supplementService.Create(supplement);
 
-            Supplement dbProduct2 = context.Supplement.FirstOrDefault();
+            Supplement dbSupplement = context.Supplement.FirstOrDefault();
 
-            Assert.NotNull(dbProduct2);
+            Assert.NotNull(dbSupplement);
         }
 
         [Test]
         public void TestEdit()
         {
-            ProductService postService = new ProductService(this.context);
+            MemberService postService = new MemberService(this.context);
 
-            Product product = new Product();
-            product.Id = 1;
-            product.Name = "Product Name";
-            User user = new User();
+            Member member = new Member();
+            member.Id = 1;
+            member.FirstName = "Member Name";
 
-            productService.Create(product, user);
+            memberService.Create(member);
 
-            Product editProduct = new Product();
+            Member editMember = new Member();
 
-            editProduct.Id = 1;
-            editProduct.Name = "asd";
+            editMember.Id = 1;
+            editMember.FirstName = "asd";
 
-            postService.Edit(editProduct);
+            postService.Edit(editMember);
 
-            Product dbProduct = context.Products.FirstOrDefault(x => x.Id == 1);
+            Member dbMember = context.Member.FirstOrDefault(x => x.Id == 1);
 
-            Assert.NotNull(dbProduct);
-            Assert.AreEqual(dbProduct.Name, "asd");
+            Assert.NotNull(dbMember);
+            Assert.AreEqual(dbMember.FirstName, "asd");
         }
 
         [Test]
         public void TestDelete()
         {
-            ProductService postService = new ProductService(this.context);
+            MemberService memberService = new MemberService(this.context);
 
-            Product product = new Product();
-            product.Id = 1;
-            product.Name = "Product Name";
-            User user = new User();
+            Member Member = new Member();
+            Member.Id = 1;
+            Member.FirstName = "Member Name";
 
-            productService.Create(product, user);
+            memberService.Create(Member);
 
-            productService.Delete(1);
+            memberService.Delete(1);
 
-            Product dbProduct = context.Products.FirstOrDefault(x => x.Id == 1);
+            Member dbProduct = context.Member.FirstOrDefault(x => x.Id == 1);
             Assert.Null(dbProduct);
+
+            StaffService staffService = new StaffService(this.context);
+
+            Staff staff = new Staff();
+            staff.Id = 2;
+            staff.FirstName = "Member Name";
+
+            staffService.Create(Staff);
+
+            staffService.Delete(2);
+
+            Staff dbStaff = context.Staff.FirstOrDefault(x => x.Id == 2);
+            Assert.Null(dbStaff);
+
+            SupplementService supplementService = new SupplementService(this.context);
+
+            Supplement supplement = new Supplement();
+            supplement.Id = 1;
+            supplement.Type = "Kreatin";
+
+            supplementService.Create(supplement);
+
+            memberService.Delete(1);
+
+            Supplement dbSupplement = context.Supplement.FirstOrDefault(x => x.Id == 1);
+            Assert.Null(dbSupplement);
+
+
         }
 
         private Member CreateMember(int id, string name)
