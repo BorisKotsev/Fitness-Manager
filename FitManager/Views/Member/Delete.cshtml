@@ -1,0 +1,10 @@
+﻿@model Member
+
+<h1>Delete Member</h1>
+
+<form asp-action="DeleteConfirm" asp-route-id="@Model.Id">
+    <button type="submit" class="btn btn-primary">Delete</button>
+    <a asp-action="Index">
+        <button type="button" class="btn btn-secondary">Cancel</button>
+    </a>
+</form>
