@@ -13,6 +13,8 @@ namespace FitManager.Models
     {
         public DbSet<Member> Member { get; set; }
 
+        public DbSet<Staff> Staff { get; set; }
+
         public ManagerDbContext(DbContextOptions options) : base(options)
         {
 
