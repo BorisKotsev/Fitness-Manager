@@ -38,6 +38,7 @@ namespace FitManager.Controllers
             user.UserName = userDTO.Email;
             user.FirstName = userDTO.FirstName;
             user.LastName = userDTO.LastName;
+            user.Type = userDTO.Type;
 
             IdentityResult result = await userManager.CreateAsync(user, userDTO.Password);
 

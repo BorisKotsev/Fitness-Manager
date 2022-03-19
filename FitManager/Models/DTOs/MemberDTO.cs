@@ -16,7 +16,5 @@ namespace FitManager.Models.DTOs
         public int PhoneNumber { get; set; }
 
         public string email { get; set; }
-
-        public bool hasSubscription { get; set; }
     }
 }

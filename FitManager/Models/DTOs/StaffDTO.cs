@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FitManager.Models.Entities
+namespace FitManager.Models.DTOs
 {
-    public class Member
+    public class StaffDTO
     {
         public int Id { get; set; }
 
@@ -14,7 +14,5 @@ namespace FitManager.Models.Entities
         public string LastName { get; set; }
 
         public int PhoneNumber { get; set; }
-
-        public string email { get; set; }
     }
 }

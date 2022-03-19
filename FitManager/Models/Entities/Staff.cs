@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FitManager.Models.Entities
 {
-    public class Member
+    public class Staff
     {
         public int Id { get; set; }
 
@@ -15,6 +15,5 @@ namespace FitManager.Models.Entities
 
         public int PhoneNumber { get; set; }
 
-        public string email { get; set; }
     }
 }

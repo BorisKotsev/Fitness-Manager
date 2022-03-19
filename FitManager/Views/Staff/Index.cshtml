@@ -1,0 +1,23 @@
+﻿@model List<StaffDTO>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">Contact</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var staff in Model)
+        {
+            <tr>
+                <th scope="row">@staff.Id</th>
+                <td>@staff.FirstName</td>
+                <td>@staff.LastName</td>
+                <td>@staff.PhoneNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>
