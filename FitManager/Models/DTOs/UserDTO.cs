@@ -16,7 +16,5 @@ namespace FitManager.Models.DTOs
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
-
-        public int Type { get; set; }
     }
 }

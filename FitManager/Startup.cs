@@ -31,7 +31,7 @@ namespace FitManager
             services.AddControllersWithViews();
             services.AddDbContext<ManagerDbContext>(options =>
             {
-                options.UseMySQL("Server=localhost;Database=managerdb;Uid=root;Pwd=1234;"); //CHANGE PASSWORD
+                options.UseMySQL("Server=localhost;Database=managerdb;Uid=root;Pwd=Password;"); //CHANGE PASSWORD
             });
             services.AddIdentity<User, IdentityRole<int>>(options =>
             {
