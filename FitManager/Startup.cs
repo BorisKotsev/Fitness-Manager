@@ -1,6 +1,6 @@
 using FitManager.Models;
 using FitManager.Models.Entities;
-//using FitManager.Services;
+using FitManager.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,7 +31,7 @@ namespace FitManager
             services.AddControllersWithViews();
             services.AddDbContext<ManagerDbContext>(options =>
             {
-                options.UseMySQL("Server=localhost;Database=managerdb;Uid=root;Pwd=Password;"); //CHANGE PASSWORD
+                options.UseMySQL("Server=localhost;Database=managerdb;Uid=root;Pwd=1234;"); //CHANGE PASSWORD
             });
             services.AddIdentity<User, IdentityRole<int>>(options =>
             {
@@ -47,7 +47,7 @@ namespace FitManager
                 .AddDefaultTokenProviders();
 
             // Services
-            //services.AddScoped<ProductService>();
+            services.AddScoped<SupplementService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
