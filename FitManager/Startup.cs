@@ -35,12 +35,8 @@ namespace FitManager
             });
             services.AddIdentity<User, IdentityRole<int>>(options =>
             {
-                options.User.RequireUniqueEmail = false;
-                options.Password.RequireDigit = false;
-                options.Password.RequireLowercase = false;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = false;
-                options.Password.RequiredLength = 1;
+                options.User.RequireUniqueEmail = true;
+                options.Password.RequiredLength = 8;
 
             })
                 .AddEntityFrameworkStores<ManagerDbContext>()

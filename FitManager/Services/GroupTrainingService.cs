@@ -43,7 +43,7 @@ namespace FitManager.Services
             dbContext.SaveChanges();
         }
 
-        public void EditDate(GroupTraining groupTraining)
+        public void Edit(GroupTraining groupTraining)
         {
             GroupTraining dbTraining = GetById(groupTraining.Id);
 

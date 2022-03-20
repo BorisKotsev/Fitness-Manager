@@ -38,7 +38,7 @@ namespace FitManager.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult EditDate(int id)
+        public IActionResult Edit(int id)
         {
             GroupTraining groupTraining = groupTrainingService.GetById(id);
 
@@ -48,7 +48,7 @@ namespace FitManager.Controllers
         [HttpPost]
         public IActionResult Edit(GroupTraining groupTraining)
         {
-            groupTrainingService.EditDate(groupTraining);
+            groupTrainingService.Edit(groupTraining);
 
             return RedirectToAction(nameof(Index));
         }

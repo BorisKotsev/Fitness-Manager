@@ -38,6 +38,12 @@ namespace FitManager.Controllers
             return View(staff);
         }
 
+        public IActionResult Delete(int id)
+        {
+            Staff Staff = staffService.GetById(id);
+            return View(Staff);
+        }
+
         [HttpPost]
         public IActionResult DeleteConfirm(int id)
         {

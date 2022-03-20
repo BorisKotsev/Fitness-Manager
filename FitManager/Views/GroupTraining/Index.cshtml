@@ -21,11 +21,11 @@
         <th scope="row">@groupTraining.Id</th>
         <td>@groupTraining.Name</td>
         <td>@groupTraining.Date</td>
-        <td>@groupTraining.Duration</td>
+        <td>@groupTraining.Duration min</td>
         <td>@groupTraining.TrainerName</td>
         <td>
         <a asp-action="Edit" asp-route-id="@groupTraining.Id">
-            <button type="button" class="btn btn-warning">Edit</button>
+            <button type="button" class="btn btn-warning">EditDate</button>
         </a>
         <a asp-action="Delete" asp-route-id="@groupTraining.Id">
             <button type="button" class="btn btn-danger">Delete</button>

@@ -6,6 +6,8 @@ a.navbar-brand {
     white-space: normal;
     text-align: center;
     word-break: break-all;
+    color: #6200EE;
+    font-family: 'Roboto', sans-serif;
 }
 /* Provide sufficient contrast against white background */
 a {
@@ -26,12 +28,13 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 24px;
+
 }
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+    }
 }
 
 .border-top {
@@ -58,10 +61,10 @@ html {
 }
 
 body {
-    /* Margin bottom by footer height */
     margin-bottom: 60px;
     background-color: #121212;
     color: #BB86FC;
+    font-family: 'Roboto', sans-serif;
 }
 
 header {
