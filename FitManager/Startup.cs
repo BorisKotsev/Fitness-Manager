@@ -31,7 +31,7 @@ namespace FitManager
             services.AddControllersWithViews();
             services.AddDbContext<ManagerDbContext>(options =>
             {
-                options.UseMySQL("Server=localhost;Database=managerdb;Uid=root;Pwd=Password;"); //CHANGE PASSWORD
+                options.UseMySQL("Server=localhost;Database=managerdb;Uid=root;Pwd=root;"); //CHANGE PASSWORD
             });
             services.AddIdentity<User, IdentityRole<int>>(options =>
             {
@@ -50,6 +50,7 @@ namespace FitManager
             services.AddScoped<StaffService>();
             services.AddScoped<MemberService>();
             services.AddScoped<SupplementService>();
+            services.AddScoped <GroupTrainingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

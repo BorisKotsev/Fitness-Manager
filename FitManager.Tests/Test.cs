@@ -188,7 +188,7 @@ namespace FitManager.Tests
             staff.Id = 2;
             staff.FirstName = "Member Name";
 
-            staffService.Create(Staff);
+            staffService.Create(staff);
 
             staffService.Delete(2);
 

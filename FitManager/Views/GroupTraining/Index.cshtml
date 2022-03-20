@@ -1,0 +1,36 @@
+﻿@model List<GroupTrainingDTO>
+
+<a asp-action="Create">
+    <button type="button" class="btn btn-success">Create</button>
+</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Trainer</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var groupTraining in Model)
+        {
+        <tr>
+        <th scope="row">@groupTraining.Id</th>
+        <td>@groupTraining.Name</td>
+        <td>@groupTraining.Date</td>
+        <td>@groupTraining.Duration</td>
+        <td>@groupTraining.TrainerName</td>
+        <td>
+        <a asp-action="Edit" asp-route-id="@groupTraining.Id">
+            <button type="button" class="btn btn-warning">Edit</button>
+        </a>
+        <a asp-action="Delete" asp-route-id="@groupTraining.Id">
+            <button type="button" class="btn btn-danger">Delete</button>
+        </a>
+    </td>
+</tr>}
+    </tbody>
+</table>

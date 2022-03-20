@@ -1,0 +1,24 @@
+﻿<h1>Add Training</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" placeholder="Enter name" name="Name">
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input type="text" class="form-control" placeholder="Enter date" name="Date">
+    </div>
+    <div class="form-group">
+        <label>Duration</label>
+        <input type="number" class="form-control" placeholder="Enter time" name="Duration">
+    </div>
+    <div class="form-group">
+        <label>Trainer</label>
+        <input type="text" class="form-control" placeholder="Enter trainer" name="TrainerName">
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+    <a asp-action="Index">
+        <button type="button" class="btn btn-secondary">Cancel</button>
+    </a>
+</form>

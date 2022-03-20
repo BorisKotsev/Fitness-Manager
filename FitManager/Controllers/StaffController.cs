@@ -18,11 +18,32 @@ namespace FitManager.Controllers
             this.staffService = staffService; 
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Staff staff)
+        {
+            staffService.Create(staff);
+
+            return RedirectToAction(nameof(Index));
+        }
+
         public IActionResult Index()
         {
             List<StaffDTO> staff = staffService.GetAll();
 
             return View(staff);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteConfirm(int id)
+        {
+            staffService.Delete(id);
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

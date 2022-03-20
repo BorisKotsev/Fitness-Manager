@@ -37,9 +37,6 @@ namespace FitManager.Migrations
                     b.Property<string>("email")
                         .HasColumnType("text");
 
-                    b.Property<bool>("hasSubscription")
-                        .HasColumnType("tinyint(1)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Member");

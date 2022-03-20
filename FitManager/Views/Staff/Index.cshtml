@@ -1,5 +1,9 @@
 ﻿@model List<StaffDTO>
 
+<a asp-action="Create">
+    <button type="button" class="btn btn-success">Create</button>
+</a>
+
 <table class="table">
     <thead>
         <tr>
@@ -7,6 +11,7 @@
             <th scope="col">FirstName</th>
             <th scope="col">LastName</th>
             <th scope="col">Contact</th>
+            <
         </tr>
     </thead>
     <tbody>
@@ -18,6 +23,11 @@
                 <td>@staff.LastName</td>
                 <td>@staff.PhoneNumber</td>
             </tr>
-        }
-    </tbody>
-</table>
+            <td>
+                <a asp-action="Delete" asp-route-id="@staff.Id">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </a>
+            </td>
+    }
+        </tbody>
+    </table>

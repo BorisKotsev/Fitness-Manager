@@ -12,6 +12,7 @@ namespace FitManager.Models.DTOs
         public string Password { get; set; }
 
         public string ConfirmPassword { get; set; }
+        public int Duration { get; set; }
 
         public string FirstName { get; set; }
 

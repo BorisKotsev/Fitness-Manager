@@ -17,6 +17,29 @@ namespace FitManager.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.15");
 
+            modelBuilder.Entity("FitManager.Models.Entities.GroupTraining", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Date")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Duration")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("TrainerName")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GroupTraining");
+                });
+
             modelBuilder.Entity("FitManager.Models.Entities.Member", b =>
                 {
                     b.Property<int>("Id")
@@ -35,12 +58,29 @@ namespace FitManager.Migrations
                     b.Property<string>("email")
                         .HasColumnType("text");
 
-                    b.Property<bool>("hasSubscription")
-                        .HasColumnType("tinyint(1)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Member");
+                });
+
+            modelBuilder.Entity("FitManager.Models.Entities.Staff", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("text");
+
+                    b.Property<int>("PhoneNumber")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Staff");
                 });
 
             modelBuilder.Entity("FitManager.Models.Entities.Supplement", b =>
@@ -67,26 +107,6 @@ namespace FitManager.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Supplement");
-                });
-
-            modelBuilder.Entity("FitManager.Models.Entities.Staff", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("text");
-
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Staff");
                 });
 
             modelBuilder.Entity("FitManager.Models.Entities.User", b =>

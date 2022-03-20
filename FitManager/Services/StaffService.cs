@@ -18,6 +18,24 @@ namespace FitManager.Services
             this.dbContext = dbContext;
         }
 
+        public Staff GetById(int id)
+        {
+            return dbContext.Staff.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void Create(Staff staff)
+        {
+            dbContext.Staff.Add(staff);
+            dbContext.SaveChanges();
+        }
+
+        public void Delete(int id)
+        {
+            Staff dbStaff = GetById(id);
+            dbContext.Staff.Remove(dbStaff);
+            dbContext.SaveChanges();
+        }
+
         private static StaffDTO ToDto(Staff s)
         {
             StaffDTO staff = new StaffDTO();
